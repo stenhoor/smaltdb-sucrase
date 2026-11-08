@@ -25,8 +25,8 @@ copy here: lines and roles change, and a copy taken before the change is out of 
 
 | Command | What it does | When |
 |---|---|---|
-| `npm ci` | Installs dependencies and builds `dist/` | First |
-| `npm run check` | `npm run typecheck`, then `npm test`: builds, then `node --test` against the built package | Before every commit |
+| `npm ci` | Installs dependencies | First |
+| `npm run check` | `npm run typecheck` (builds first: the tests import the built package), then `npm test` (`node --test`) | Before every commit |
 | `npm run build` | `dist/index.js` and its type declarations | Packaging checks |
 
 ## Rules for this plugin
