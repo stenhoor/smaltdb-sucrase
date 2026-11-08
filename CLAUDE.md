@@ -1,5 +1,10 @@
 # CLAUDE.md
 
+**Retired on 2026-11-08:** TypeScript in the smalt apps is stripped by [smaltty](https://github.com/stenhoor/smaltty)
+(through `smaltkit/typescript`), and smaltui no longer pins this plugin (stenhoor/smaltui#33). Don't add features or
+bump sucrase here; changes to how the apps run TypeScript go to smaltty. The rest of this file describes the plugin as it
+was.
+
 This repository is `@smaltworks/smaltdb-sucrase`, an optional plugin for [smaltdb](https://github.com/stenhoor/smaltdb):
 it strips TypeScript types at run time with [sucrase](https://github.com/alangpierce/sucrase), so an app can run
 TypeScript written against smaltdb (smaltdf frames, a TypeScript tab) without the TypeScript compiler. It does not run
@@ -56,6 +61,5 @@ Follow smaltdb's `CLAUDE.md` ("Issues").
 
 ## Cross-repo impact
 
-- smaltui pins this repository in its `packed.json` and bundles it, with sucrase and their notices, into
-  `vendor/smaltdb-sucrase/` for its TypeScript tabs. After a change here, update that pin.
+- No app uses this plugin any more. smaltui pinned it in `packed.json` until stenhoor/smaltui#33.
 - Brand assets and voice come from `stenhoor/smalt-brand`. A plugin uses smaltdb's brand, with no mark of its own.

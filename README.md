@@ -4,6 +4,10 @@
 
 [smaltworks.dev](https://smaltworks.dev/products/plugins)
 
+> **Retired (2026-11-08).** TypeScript in the smalt apps is stripped by [smaltty](https://github.com/stenhoor/smaltty),
+> our own TypeScript kit with no dependencies, through `smaltkit/typescript`. smaltui moved over in
+> stenhoor/smaltui#33, and nothing uses this plugin any more. It is kept for reference and won't be updated.
+
 Runs TypeScript written against [smaltdb](https://github.com/stenhoor/smaltdb) in the browser, with no TypeScript
 compiler: [sucrase](https://github.com/alangpierce/sucrase) removes the types, and everything else stays as written.
 ES modules stay ES modules, modern syntax is kept, and line numbers don't move, so an error's line is the line you
