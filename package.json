@@ -1,0 +1,52 @@
+{
+  "name": "@smaltworks/smaltdb-sucrase",
+  "version": "0.1.0",
+  "description": "Strips TypeScript types at run time with sucrase, for TypeScript that runs against smaltdb in the browser",
+  "keywords": [
+    "smaltdb",
+    "typescript",
+    "sucrase"
+  ],
+  "author": "stenhoor",
+  "license": "MIT",
+  "homepage": "https://github.com/stenhoor/smaltdb-sucrase#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stenhoor/smaltdb-sucrase.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stenhoor/smaltdb-sucrase/issues"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=22.18"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "typecheck": "node scripts/build.mjs && tsc -p tsconfig.json",
+    "test": "node scripts/build.mjs && node --test test/*.test.ts",
+    "check": "npm run typecheck && npm test",
+    "prepublishOnly": "npm run check"
+  },
+  "dependencies": {
+    "sucrase": "3.35.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "esbuild": "^0.28.2",
+    "typescript": "5.9"
+  }
+}
